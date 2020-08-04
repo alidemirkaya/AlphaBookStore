@@ -1,0 +1,33 @@
+﻿@model IEnumerable<AlphaBookStore.Entities.Category>
+
+@{
+    ViewBag.Title = "CategoryListForm";
+}
+<h2>Kategoriler</h2>
+        <a href="CategoryEditForm" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus">
+            </span>
+            Yeni Kategori Ekle
+        </a>
+
+<table class="table table-bordered" style="margin-top:5px">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            <a href="/Category/CategoryEditForm/@item.Id" class="glyphicon glyphicon-pencil"></a>
+            <a href="/Category/Delete/@item.Id" class="glyphicon glyphicon-remove" style="left:15px"></a>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,27 @@
+﻿@model AlphaBookStore.Entities.Category
+@{
+    ViewBag.Title = "CategoryEditForm";
+}
+@if(Model != null)
+{
+    <h2>Kategori Güncelle</h2>
+}
+else
+{
+    <h2>Yeni Kategori Kayıt</h2>
+}
+@using (Html.BeginForm("CategoryEditForm"))
+{
+<div class="form-horizontal">
+        <label class="label label-info">Kategori Adı</label>
+        @if (Model != null)
+        {
+            <input hidden type="text" value="@Model.Id" />
+        }
+    @Html.EditorFor(m => m.Name)
+        <input class="btn btn-success" type="submit" value='Kaydet' />
+</div>
+
+    
+}
+

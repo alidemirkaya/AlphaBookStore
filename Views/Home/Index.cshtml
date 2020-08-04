@@ -1,0 +1,36 @@
+﻿@model AlphaBookStore.Models.ViewModel.HomePageViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Kitaplar</h2>
+<div class="row">
+    @foreach (var deg in Model.Books)
+    {
+        <div class="col-md-3">
+            <div class="card" style="        background-color:#e4e3e3;">
+                <div class="card-body">
+                    <h4>@deg.Name</h4>
+                    <p>Yılı :@deg.Year</p>
+                    <p>Kategori :@deg.Category.Name</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<h2>Yazarlar</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Kitap Sayısı</th>
+        </tr>
+        @foreach (var deg in Model.Authors)
+        {
+            <tr>
+                <td>@deg.FirstName</td>
+                <td>@deg.LastName</td>
+                <td>@deg.Books.Count()</td>
+            </tr>
+        }
+    </table>
+

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    @RenderSection("head",false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey  w3-bar-block w3-card" style="width:15%">
+        <a href="/Home" class="w3-bar-item w3-button">
+        <span class="glyphicon glyphicon-home" style="right:6px"></span>Anasayfa</a>
+
+        <a href="/Book" class="w3-bar-item w3-button">
+            <span class="glyphicon glyphicon-book"style="right:6px"></span>Kitaplar</a>
+        <a href="/Author" class="w3-bar-item w3-button">
+            <span class="glyphicon glyphicon-user" style="right:6px"></span>Yazarlar</a>
+        <a href="/Category/CategoryListForm" class="w3-bar-item w3-button">
+            <span class="glyphicon glyphicon-th" style="right:6px"></span>Kategoriler</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
